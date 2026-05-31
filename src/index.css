@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 bg-diamanti-ivory font-body text-diamanti-navy antialiased;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  a {
+    @apply text-inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply m-0 font-display;
+  }
+
+  p {
+    @apply m-0;
+  }
+}
