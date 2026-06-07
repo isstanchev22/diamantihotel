@@ -22,6 +22,7 @@ export interface SiteImage {
 
 export interface RoomCategory {
   slug: string
+  category: 'rooms' | 'studios' | 'suites'
   name: LocalizedString
   shortDescription: LocalizedString
   detailedDescription: LocalizedString
@@ -40,6 +41,10 @@ export interface RoomCategory {
 export interface Testimonial {
   author: string
   country: string
+  rating?: number
+  date?: string
+  title?: LocalizedString
+  room?: LocalizedString
   quote: LocalizedString
   source: string
 }

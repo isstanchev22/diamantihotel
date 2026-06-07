@@ -3,11 +3,11 @@
 export const faqItems: FaqItem[] = [
   {
     question: {
-      bg: 'Каква е разликата между room категориите?',
+      bg: 'Каква е разликата между категориите стаи?',
       en: 'What is the difference between room categories?',
     },
     answer: {
-      bg: 'Показваме ги по реалните категории от booking engine-а: тип изглед, етаж, балкон/без балкон и капацитет. Ако се колебаете, изпратете дати и ще препоръчаме най-подходящата опция.',
+      bg: 'Стаите се различават по гледка, размер, разположение и удобства. Някои са с балкон или тераса, други са с морски изглед, а студиата и суитите предлагат повече пространство за по-спокоен престой.',
       en: 'We present real booking-engine categories by view type, floor, balcony/no balcony, and occupancy. If unsure, send your dates and we will recommend the best fit.',
     },
   },
@@ -43,22 +43,12 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: {
-      bg: 'Мога ли да резервирам голям апартамент онлайн?',
-      en: 'Can I book a large apartment online?',
-    },
-    answer: {
-      bg: 'В някои периоди големият апартамент не е активен като отделна online категория. Изпратете директно запитване и ще потвърдим наличност.',
-      en: 'In some periods the large apartment is not active as a separate online category. Send a direct enquiry and we will confirm availability.',
-    },
-  },
-  {
-    question: {
       bg: 'Имате ли опции за сватби и малки събития?',
       en: 'Do you host weddings and small events?',
     },
     answer: {
-      bg: 'Да. Организираме малки морски церемонии и семейни събития с настаняване и ресторант в общ пакет.',
-      en: 'Yes. We host intimate sea-view ceremonies and family events with accommodation and restaurant coordination.',
+      bg: 'Да. Организираме камерни сватби за 20-40 гости, с възможност за изнесен ритуал, ресторантска част и координация. Сватбата може да бъде организирана и без нощувки в хотела.',
+      en: 'Yes. We host intimate weddings for 20-40 guests, with an external ceremony option, restaurant coordination, and the possibility to organize the day without overnight stays at the hotel.',
     },
   },
 ]

@@ -1,7 +1,7 @@
 ﻿import { useMemo, useState } from 'react'
 import type { MouseEvent } from 'react'
 import { useLocation } from 'react-router-dom'
-import { navigationLinks, ctas } from '../../data/siteData'
+import { navigationLinks, ctas, brandLogoUrl } from '../../data/siteData'
 import { useLanguage } from '../../context/LanguageContext'
 import { classNames } from '../../lib/classNames'
 import { useActiveSection } from '../../lib/useActiveSection'
@@ -55,24 +55,11 @@ export function SiteHeader() {
           className="group"
           aria-label="Hotel Diamanti home"
         >
-          <p
-            className={classNames(
-              'font-display text-3xl leading-none transition',
-              isDarkTheme
-                ? 'text-white group-hover:text-white/85'
-                : 'text-diamanti-navy group-hover:text-diamanti-sea',
-            )}
-          >
-            Diamanti
-          </p>
-          <p
-            className={classNames(
-              'text-[11px] uppercase tracking-[0.18em]',
-              isDarkTheme ? 'text-white/75' : 'text-diamanti-sea',
-            )}
-          >
-            Old Sozopol Waterfront
-          </p>
+          <img
+            src={brandLogoUrl}
+            alt="Hotel Diamanti"
+            className="h-11 w-auto object-contain transition duration-300 group-hover:scale-[1.03]"
+          />
         </a>
 
         <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">

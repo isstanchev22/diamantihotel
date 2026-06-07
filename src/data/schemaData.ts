@@ -6,7 +6,7 @@ export const hotelSchema = {
   '@type': 'Hotel',
   name: 'Hotel Diamanti',
   description:
-    'Family-run waterfront hotel in Old Sozopol with sea-view rooms, terrace breakfast, and easy walking access to beach and harbour.',
+    'Waterfront hotel in Old Sozopol with sea-view rooms, terrace breakfast, personal service, and easy walking access to beach and harbour.',
   url: 'https://hoteldiamanti.com',
   telephone: contactDetails.phoneDisplay,
   email: contactDetails.email,

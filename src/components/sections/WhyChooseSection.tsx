@@ -17,8 +17,8 @@ export function WhyChooseSection() {
             en: 'Why guests choose Diamanti',
           }}
           title={{
-            bg: 'Тук обещанията са конкретни - и лесни за проверка.',
-            en: 'Here the promise is specific and easy to verify.',
+            bg: 'Спокойният лукс тук е в гледката, детайлите и начина, по който ви посрещаме.',
+            en: 'The quiet luxury here is in the view, the details, and the way you are welcomed.',
           }}
         />
       </RevealOnScroll>

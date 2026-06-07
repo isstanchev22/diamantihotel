@@ -5,7 +5,7 @@ export function TrustMetricCard({ item }: { item: TrustMetric }) {
   const { locale } = useLanguage()
 
   return (
-    <article className="rounded-2xl border border-diamanti-sand bg-white/80 p-5 shadow-soft">
+    <article className="premium-card-hover rounded-2xl border border-diamanti-sand bg-white/80 p-5 shadow-soft">
       <p className="text-xs uppercase tracking-[0.15em] text-diamanti-sea">
         {item.label[locale]}
       </p>

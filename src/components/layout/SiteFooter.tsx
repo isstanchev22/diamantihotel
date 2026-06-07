@@ -1,5 +1,5 @@
 ﻿import { useLocation } from 'react-router-dom'
-import { contactDetails, ctas, navigationLinks } from '../../data/siteData'
+import { brandLogoUrl, contactDetails, ctas, navigationLinks } from '../../data/siteData'
 import { useLanguage } from '../../context/LanguageContext'
 import { trackEvent } from '../../lib/tracking'
 import { bookingEngineUrl } from '../../data/siteData'
@@ -13,11 +13,15 @@ export function SiteFooter() {
     <footer className="border-t border-diamanti-sand/60 bg-diamanti-navy text-diamanti-ivory">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.3fr_1fr_1fr] md:px-8">
         <div>
-          <p className="font-display text-4xl">Diamanti</p>
+          <img
+            src={brandLogoUrl}
+            alt="Hotel Diamanti"
+            className="h-16 w-auto object-contain"
+          />
           <p className="mt-3 max-w-md text-sm leading-relaxed text-diamanti-ivory/85">
             {locale === 'bg'
-              ? 'Семеен waterfront хотел в сърцето на Стария Созопол, където гледката, закуската и човешкото отношение са еднакво важни.'
-              : 'Family-run waterfront hotel in Old Sozopol where sea view, breakfast, and personal hospitality matter equally.'}
+              ? 'Хотел на самия бряг в Стария Созопол, където гледката, закуската и личното отношение са еднакво важни.'
+              : 'A waterfront hotel in Old Sozopol where sea view, breakfast, and personal service matter equally.'}
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a
@@ -105,17 +109,6 @@ export function SiteFooter() {
       <div className="border-t border-diamanti-ivory/15">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-5 py-4 text-xs text-diamanti-ivory/75 md:flex-row md:items-center md:justify-between md:px-8">
           <p>© {new Date().getFullYear()} Hotel Diamanti</p>
-          <div className="flex flex-wrap gap-4">
-            <a href="/privacy-policy" className="hover:text-diamanti-ivory">
-              {locale === 'bg' ? 'Политика за поверителност' : 'Privacy policy'}
-            </a>
-            <a href="/terms" className="hover:text-diamanti-ivory">
-              {locale === 'bg' ? 'Общи условия' : 'Terms'}
-            </a>
-            <a href="/cookies" className="hover:text-diamanti-ivory">
-              {locale === 'bg' ? 'Бисквитки' : 'Cookies'}
-            </a>
-          </div>
         </div>
       </div>
     </footer>

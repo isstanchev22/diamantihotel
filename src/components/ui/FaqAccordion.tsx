@@ -21,7 +21,10 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
         return (
           <article
             key={item.question.bg}
-            className="rounded-2xl border border-diamanti-sand/70 bg-white"
+            className={classNames(
+              'premium-card-hover rounded-2xl border bg-white',
+              isOpen ? 'border-diamanti-terracotta/70 shadow-soft' : 'border-diamanti-sand/70',
+            )}
           >
             <h3>
               <button
@@ -32,14 +35,14 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
                 onClick={() => setOpenIndex(isOpen ? null : index)}
                 className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
               >
-                <span className="font-medium text-diamanti-navy">
+                <span className="font-medium text-diamanti-navy transition duration-300">
                   {item.question[locale]}
                 </span>
                 <span
                   aria-hidden="true"
                   className={classNames(
-                    'inline-flex h-7 w-7 items-center justify-center rounded-full border border-diamanti-navy text-diamanti-navy transition',
-                    isOpen && 'rotate-45',
+                    'inline-flex h-7 w-7 items-center justify-center rounded-full border border-diamanti-navy text-diamanti-navy transition duration-300',
+                    isOpen && 'rotate-45 bg-diamanti-navy text-diamanti-ivory',
                   )}
                 >
                   +
@@ -51,12 +54,12 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
               role="region"
               aria-labelledby={buttonId}
               className={classNames(
-                'grid transition-all duration-300',
+                'grid transition-all duration-500 ease-out',
                 isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
               )}
             >
               <div className="overflow-hidden">
-                <p className="px-5 pb-5 text-sm leading-relaxed text-diamanti-navy/80 md:text-base">
+                <p className="premium-fade-up px-5 pb-5 text-sm leading-relaxed text-diamanti-navy/80 md:text-base">
                   {item.answer[locale]}
                 </p>
               </div>

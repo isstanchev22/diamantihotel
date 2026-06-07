@@ -11,7 +11,7 @@ export function FaqTeaserSection() {
   const { locale } = useLanguage()
 
   return (
-    <SectionContainer id="faq" background="ivory">
+    <SectionContainer id="faq" background="stone">
       <RevealOnScroll>
         <SectionHeading
           eyebrow={{ bg: 'FAQ', en: 'FAQ' }}

@@ -13,7 +13,7 @@ export function HeroSection() {
       <img
         src={sectionImages.hero.src}
         alt={sectionImages.hero.alt[locale]}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="hero-cinematic-image absolute inset-0 h-full w-full object-cover"
         loading="eager"
       />
       <div className="absolute inset-0 bg-diamanti-navy/60 backdrop-blur-[1px]" aria-hidden="true" />
@@ -22,7 +22,7 @@ export function HeroSection() {
         <RevealOnScroll>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-white/85">
-              {locale === 'bg' ? 'Waterfront Old Town Stay' : 'Waterfront Old Town Stay'}
+              {locale === 'bg' ? 'Хотел на самия бряг в Стария град' : 'Waterfront Old Town Hotel'}
             </p>
             <h1 className="mt-4 font-display text-5xl leading-tight text-white md:text-7xl">
               {heroContent.title[locale]}
@@ -39,7 +39,7 @@ export function HeroSection() {
                 {heroContent.secondaryCta[locale]}
               </a>
             </div>
-            <div className="mt-6 rounded-2xl border border-white/30 bg-white/15 p-4 backdrop-blur-sm">
+            <div className="premium-shimmer premium-fade-up mt-6 rounded-2xl border border-white/30 bg-white/15 p-4 backdrop-blur-sm" style={{ animationDelay: '220ms' }}>
               <p className="text-sm text-white md:text-base">
                 <strong>9.3</strong> Booking · <strong>9.9</strong>{' '}
                 {locale === 'bg' ? 'локация' : 'location'} · <strong>9.7</strong>{' '}
@@ -47,7 +47,7 @@ export function HeroSection() {
               </p>
               <p className="mt-1 text-xs text-white/90">
                 {locale === 'bg'
-                  ? 'Реални оценки за гледка, закуска и отношение - точно това, което гостите описват най-често.'
+                  ? 'Реални оценки за гледка, закуска и отношение - детайлите, които гостите описват най-често.'
                   : 'Verified ratings that repeatedly highlight the view, breakfast, and staff care.'}
               </p>
             </div>

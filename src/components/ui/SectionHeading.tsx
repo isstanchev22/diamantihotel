@@ -18,7 +18,7 @@ export function SectionHeading({
   const isCentered = align === 'center'
 
   return (
-    <div className={isCentered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
+    <div className={`premium-fade-up ${isCentered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}`}>
       {eyebrow ? (
         <p className="mb-3 text-xs uppercase tracking-[0.22em] text-diamanti-sea">
           {eyebrow[locale]}

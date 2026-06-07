@@ -16,7 +16,7 @@ export function OldTownSection() {
         <SectionHeading
           eyebrow={{ bg: 'Гид за Созопол', en: 'Sozopol guide' }}
           title={{
-            bg: 'Старият Созопол започва от прага на хотела.',
+            bg: 'Старият град започва още от прага на хотела.',
             en: 'Old Sozopol starts right at the hotel doorstep.',
           }}
           description={{

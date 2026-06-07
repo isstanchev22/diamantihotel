@@ -88,7 +88,7 @@ export function ContactTeaserSection() {
   }
 
   return (
-    <SectionContainer id="contact-parking" background="stone">
+    <SectionContainer id="contact-parking" background="ivory">
       <div className="grid gap-8 lg:grid-cols-[1.02fr_1fr]">
         <RevealOnScroll>
           <div>
@@ -99,7 +99,7 @@ export function ContactTeaserSection() {
                 en: 'Contact us directly for room clarity, access guidance, and smooth arrival.',
               }}
               description={{
-                bg: 'Тук получавате най-бързия отговор за наличност, parking насоки и късно настаняване.',
+                bg: 'Тук получавате най-бързия отговор за наличност, насоки за паркиране и късно настаняване.',
                 en: 'Get the fastest response for availability, parking guidance, and late check-in.',
               }}
             />

@@ -3,6 +3,8 @@
 export const bookingEngineUrl =
   'https://sky-eu1.clock-software.com/spa/pms-wbe/#/hotel/13742'
 
+export const brandLogoUrl = 'https://i.ibb.co/0pJvfHVP/Untitled-Artwork-Edited.png'
+
 export const contactDetails = {
   phoneDisplay: '+359 550 22 640',
   phoneHref: 'tel:+35955022640',
@@ -36,16 +38,16 @@ export const navigationLinks: NavLinkItem[] = [
 
 export const heroContent = {
   title: {
-    bg: 'Събудете се над морето в сърцето на Стария Созопол.',
-    en: 'Wake up above the sea in the heart of Old Sozopol.',
+    bg: 'Събудете се над морето в Стария Созопол.',
+    en: 'Wake up above the sea in Old Sozopol.',
   },
   subtitle: {
-    bg: 'Семеен хотел на самия бряг - със sea-view стаи и студиа, закуска на терасата и няколко минути пеша до плажа, пристанището и най-красивите улици на Стария град.',
-    en: 'A family-run waterfront stay with sea-view rooms, breakfast on the terrace, and short walks to the beach, harbour, and old-town streets.',
+    bg: 'В Хотел Диаманти морето е част от всеки момент - от първата гледка сутрин, през закуската на терасата, до вечерните разходки из града.',
+    en: 'Hotel Diamanti sits right on the waterfront, with sea-view rooms and studios, terrace breakfast, and the old town just a few steps away.',
   },
   primaryCta: {
-    bg: 'Провери наличност и цени',
-    en: 'Check availability and prices',
+    bg: 'Провери наличност',
+    en: 'Check availability',
   },
   secondaryCta: {
     bg: 'Виж стаите',
@@ -90,11 +92,11 @@ export const trustMetrics: TrustMetric[] = [
 
 export const trustBadges: LocalizedString[] = [
   {
-    bg: 'Семеен хотел с лично отношение',
-    en: 'Family-run hospitality',
+    bg: 'Хотел с лично отношение',
+    en: 'Hotel with personal service',
   },
   {
-    bg: 'Waterfront позиция в Стария град',
+    bg: 'На самия бряг в Стария град',
     en: 'Waterfront old-town location',
   },
   {
@@ -105,24 +107,20 @@ export const trustBadges: LocalizedString[] = [
 
 export const whyChoosePoints: LocalizedString[] = [
   {
-    bg: 'Локация на първа линия в Стария град, където гледката е част от самия престой.',
-    en: 'First-line old-town location where the view is part of the stay itself.',
+    bg: 'Първа линия в Стария град, където морето присъства още от първото сутрешно кафе.',
+    en: 'A first-line Old Town address where the sea is part of the morning, not just the view.',
   },
   {
-    bg: 'Реални room категории с ясни разлики между изглед, етаж и конфигурация.',
-    en: 'Real room categories with clear differences in view, floor, and setup.',
+    bg: 'Закуска и вечеря на тераса с хоризонт към Св. Иван, Св. Петър и тихия ритъм на залива.',
+    en: 'Breakfast and dinner on a terrace facing St. Ivan, St. Peter, and the quiet rhythm of the bay.',
   },
   {
-    bg: 'Тераса за закуска и вечеря с директен хоризонт към Св. Иван и Св. Петър.',
-    en: 'Breakfast and dinner terrace with direct views toward St. Ivan and St. Peter.',
+    bg: 'Плажът, пристанището, галериите и калдъръмените улици са на кратка разходка разстояние.',
+    en: 'The beach, harbour, galleries, and cobbled lanes are all an easy walk away.',
   },
   {
-    bg: 'Плаж, пристанище и културни точки в рамките на удобна пешеходна дистанция.',
-    en: 'Beach, harbour, and cultural spots within easy walking distance.',
-  },
-  {
-    bg: 'Преди пристигане получавате ясни инструкции за достъп, паркиране и късно настаняване.',
-    en: 'Before arrival, you get clear guidance for access, parking, and late check-in.',
+    bg: 'Преди пристигане получавате спокойни и точни насоки за достъп, паркиране и късно настаняване.',
+    en: 'Before arrival, you get calm, practical guidance for access, parking, and late check-in.',
   },
 ]
 
@@ -158,19 +156,19 @@ export const oldTownHighlights: LocalizedString[] = [
 
 export const ctas = {
   book: {
-    bg: 'Провери наличност и цени',
-    en: 'Check availability and prices',
+    bg: 'Провери наличност',
+    en: 'Check availability',
   },
   viewRooms: {
-    bg: 'Виж стаите',
-    en: 'See rooms',
+    bg: 'Разгледай стаите',
+    en: 'Explore rooms',
   },
   reserveTable: {
     bg: 'Резервирай маса',
     en: 'Reserve a table',
   },
   askWedding: {
-    bg: 'Запитай за сватба',
+    bg: 'Попитай за сватба',
     en: 'Ask about a wedding',
   },
   seeArrival: {
@@ -185,11 +183,11 @@ export const ctas = {
 
 export const seoDefaults = {
   title: {
-    bg: 'Hotel Diamanti | Семеен waterfront хотел в Стария Созопол',
-    en: 'Hotel Diamanti | Family waterfront stay in Old Sozopol',
+    bg: 'Hotel Diamanti | Хотел на самия бряг в Стария Созопол',
+    en: 'Hotel Diamanti | Waterfront hotel in Old Sozopol',
   },
   description: {
-    bg: 'Стаи и студиа с морски изглед в Стария Созопол, закуска на тераса, семейно отношение и директен достъп до официалния booking engine.',
-    en: 'Sea-view rooms and studios in Old Sozopol with terrace breakfast, family hospitality, and direct access to the official booking engine.',
+    bg: 'Стаи и студиа с морски изглед в Стария Созопол, закуска на тераса, лично отношение и директна резервация през официалната система.',
+    en: 'Sea-view rooms and studios in Old Sozopol with terrace breakfast, personal service, and direct access to the official booking engine.',
   },
 }

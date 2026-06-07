@@ -2,7 +2,7 @@
 
 export const sectionImages = {
   hero: {
-    src: '/images/hero-sea-view.jpg',
+    src: 'https://q-xx.bstatic.com/xdata/images/xphoto/max1280x900/557716178.jpg?k=7117a2e85fc87769f72710c8b89fc36eff861cfd3ab9b948db412a2062efdda9&o=',
     alt: {
       bg: 'Тераса с директен морски изглед от Hotel Diamanti в Стария Созопол',
       en: 'Sea-view terrace at Hotel Diamanti in Old Sozopol',
@@ -57,11 +57,32 @@ export const sectionImages = {
     },
     source: 'Hotel Diamanti official website',
   },
+  gallerySeaView: {
+    src: 'https://i.ibb.co/XksWKNCG/1780860812897629.jpg',
+    alt: {
+      bg: 'Гледка и атмосфера от Hotel Diamanti',
+      en: 'View and atmosphere from Hotel Diamanti',
+    },
+  },
+  galleryExterior: {
+    src: 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEJ_P0mYmLL0yjTXrSKx1usCkDsxmFpumbnoBlZ4a4omh1R3WNHlTUMix0xj7w6Ftee9XY4GMFM5u5AVkWNLxvndsSFFMXGNe8tEWPRaqafuDkCUg8DGwIz2oRQKUfQi6DwKrixC46RRBn8=s680-w680-h510-rw',
+    alt: {
+      bg: 'Hotel Diamanti в Стария Созопол',
+      en: 'Hotel Diamanti in Old Sozopol',
+    },
+  },
+  galleryRoomDetail: {
+    src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/351629692.jpg?k=467cb091c083d37788fad4f42a848764f40b70a359529283b1c9797be2c08317&o=',
+    alt: {
+      bg: 'Интериор и детайл от Hotel Diamanti',
+      en: 'Interior and detail from Hotel Diamanti',
+    },
+  },
 } satisfies Record<string, SiteImage>
 
 export const roomImageMap = {
   roomWithSideSeaView: {
-    src: '/images/room-side-sea-view.jpg',
+    src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/461728800.jpg?k=559eeefcdcb0fe3ec4301b7eb2c5da01148c3d63fcfccec75ea4d03160ba2138&o=',
     alt: {
       bg: 'Стая със страничен морски изглед в Hotel Diamanti',
       en: 'Room with side sea view at Hotel Diamanti',
@@ -69,7 +90,7 @@ export const roomImageMap = {
     source: 'Clock booking engine media',
   },
   roomWithBalconyNoSea: {
-    src: '/images/room-balcony-no-sea.jpg',
+    src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/461716389.jpg?k=2defb7d4725b169dbcfbeec911292380db763366652cabd79c2ce9622466d003&o=',
     alt: {
       bg: 'Стая с балкон и изглед към Стария град, без морски изглед',
       en: 'Room with balcony and old-town view, no sea view',
@@ -77,7 +98,7 @@ export const roomImageMap = {
     source: 'Clock booking engine media',
   },
   studioSeaView: {
-    src: '/images/studio-sea-view.jpg',
+    src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/142908276.jpg?k=d13e5b35c82ac99eae0ce799083bd6ca6251f4236f6147d0de515a9955e4d2dc&o=',
     alt: {
       bg: 'Студио с директен морски изглед',
       en: 'Studio with direct sea view',
@@ -85,7 +106,7 @@ export const roomImageMap = {
     source: 'Clock booking engine media',
   },
   studioFirstFloor: {
-    src: '/images/studio-first-floor.jpg',
+    src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/142909843.jpg?k=6553b2891cdde4359f5956deab63df828ab0c90102df91a683bf7147c60680c3&o=',
     alt: {
       bg: 'Студио на първи етаж с кухненски кът',
       en: 'First-floor studio with kitchenette',
@@ -93,7 +114,7 @@ export const roomImageMap = {
     source: 'Clock booking engine media',
   },
   atticStudioSeaView: {
-    src: '/images/attic-studio-sea-view.jpg',
+    src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/461715741.jpg?k=5d906ed4ef4387edd347877ca84df484a27be20fed8484dbacefa50d93f17585&o=',
     alt: {
       bg: 'Мансардно студио с морски изглед',
       en: 'Attic studio with sea view',
@@ -101,10 +122,10 @@ export const roomImageMap = {
     source: 'Clock booking engine media',
   },
   juniorSuiteSeaView: {
-    src: '/images/junior-suite-sea-view.jpg',
+    src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/676705889.jpg?k=91f05e03ebe9a1964a3aa6d9df6b05f92eef4added6ecf5908733a53f728ede3&o=',
     alt: {
-      bg: 'Junior Suite с директен морски изглед',
-      en: 'Junior Suite with direct sea view',
+      bg: 'Суит с морски изглед',
+      en: 'Suite with sea view',
     },
     source: 'Clock booking engine media',
   },

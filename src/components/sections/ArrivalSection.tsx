@@ -8,7 +8,7 @@ export function ArrivalSection() {
   const { locale } = useLanguage()
 
   return (
-    <SectionContainer id="arrival-info" background="stone">
+    <SectionContainer id="arrival-info" background="ivory">
       <RevealOnScroll>
         <SectionHeading
           eyebrow={{

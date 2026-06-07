@@ -94,24 +94,44 @@ export function WeddingsTeaserSection() {
           <div>
             <SectionHeading
               eyebrow={{
-                bg: 'Сватби и събития',
-                en: 'Weddings and events',
+                bg: 'Сватби край морето',
+                en: 'Sea-view weddings',
               }}
               title={{
-                bg: 'Малка морска церемония с усещане за лично място.',
-                en: 'An intimate sea-view ceremony with a personal feel.',
+                bg: 'Малка сватба с гледка към морето и атмосферата на Стария Созопол.',
+                en: 'An intimate wedding by the sea, in the heart of Old Sozopol.',
               }}
               description={{
-                bg: 'Услугата е вторична спрямо настаняването, но е организирана така, че гостите да получат спокойна координация между тераса, ресторант и стаи.',
-                en: 'This is a secondary offer, yet carefully organized so terrace, restaurant, and accommodation work together smoothly.',
+                bg: 'Организираме камерни сватби за 20-40 гости - с възможност за изнесен ритуал, ресторантска част и координация според вашия ден. Сватбата може да бъде организирана и без нощувки в хотела.',
+                en: 'We host small weddings for 20-40 guests, with the option for an external ceremony, restaurant coordination, and a calm seaside setting. The wedding can also be arranged without overnight stays at the hotel.',
               }}
             />
             <ul className="mt-6 space-y-3 rounded-2xl border border-diamanti-sand/70 bg-white p-5 text-sm text-diamanti-navy/85 md:text-base">
-              <li>• {locale === 'bg' ? 'Подходящо за 20-60 гости' : 'Suitable for 20-60 guests'}</li>
-              <li>• {locale === 'bg' ? 'Морска тераса и ресторант в общ сценарий' : 'Sea-view terrace and restaurant in one scenario'}</li>
-              <li>• {locale === 'bg' ? 'Опция за комбиниране с настаняване' : 'Can be combined with accommodation'}</li>
+              <li>• {locale === 'bg' ? 'Подходящо за 20-40 гости' : 'Suitable for 20-40 guests'}</li>
+              <li>• {locale === 'bg' ? 'Възможност за изнесен ритуал' : 'External ceremony available'}</li>
+              <li>• {locale === 'bg' ? 'Може да бъде без настаняване в хотела' : 'Can be organized without hotel accommodation'}</li>
+              <li>
+                •{' '}
+                {locale === 'bg'
+                  ? 'Работим със Сватбена агенция „Диаманти“ - '
+                  : 'In partnership with Wedding Agency "Diamanti" - '}
+                <a
+                  href="https://diamanti-bs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-diamanti-navy underline-offset-4 hover:underline"
+                >
+                  diamanti-bs.com
+                </a>
+              </li>
             </ul>
-            <div className="mt-7">
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a
+                href="#wedding-enquiry"
+                className="inline-flex items-center justify-center rounded-full bg-diamanti-terracotta px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-diamanti-terracotta/90 md:text-base"
+              >
+                {ctas.askWedding[locale]}
+              </a>
               <BookingCta placement="weddings_section">{ctas.book[locale]}</BookingCta>
             </div>
           </div>
@@ -127,14 +147,14 @@ export function WeddingsTeaserSection() {
       </div>
 
       <RevealOnScroll delayMs={150}>
-        <div className="mt-10 rounded-3xl border border-diamanti-sand/70 bg-white p-6 md:p-7">
+        <div id="wedding-enquiry" className="mt-10 rounded-3xl border border-diamanti-sand/70 bg-white p-6 md:p-7">
           <h3 className="font-display text-3xl text-diamanti-navy md:text-4xl">
             {ctas.askWedding[locale]}
           </h3>
           <p className="mt-2 text-sm text-diamanti-navy/75 md:text-base">
             {locale === 'bg'
-              ? 'Изпратете ориентировъчна дата и брой гости. Връщаме персонална рамка за настаняване и организация.'
-              : 'Send your target date and guest count. We will reply with a tailored accommodation and event outline.'}
+              ? 'Изпратете дата, брой гости и кратка идея за деня. Ще ви върнем ясна рамка за възможностите.'
+              : 'Send your date, guest count, and a short idea for the day. We’ll reply with a clear outline of what’s possible.'}
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 grid gap-4 md:grid-cols-2" noValidate>

@@ -45,7 +45,7 @@ export const guideCards: GuideCard[] = [
   },
   {
     title: {
-      bg: 'Извън сезона: спокоен creative escape',
+      bg: 'Извън сезона: спокойно творческо бягство',
       en: 'Off-season: calm creative escape',
     },
     description: {

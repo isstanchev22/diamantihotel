@@ -7,7 +7,6 @@ import { OldTownSection } from '../components/sections/OldTownSection'
 import { RestaurantPreviewSection } from '../components/sections/RestaurantPreviewSection'
 import { ReviewsSection } from '../components/sections/ReviewsSection'
 import { RoomsPreviewSection } from '../components/sections/RoomsPreviewSection'
-import { TrustStripSection } from '../components/sections/TrustStripSection'
 import { WeddingsTeaserSection } from '../components/sections/WeddingsTeaserSection'
 import { WhyChooseSection } from '../components/sections/WhyChooseSection'
 import { PageSeo } from '../components/ui/PageSeo'
@@ -24,14 +23,13 @@ export function HomePage() {
       <SchemaScript schema={faqSchema} />
 
       <HeroSection />
-      <TrustStripSection />
       <RoomsPreviewSection />
+      <ReviewsSection />
       <WhyChooseSection />
       <RestaurantPreviewSection />
       <OldTownSection />
       <GallerySection />
       <ArrivalSection />
-      <ReviewsSection />
       <WeddingsTeaserSection />
       <FaqTeaserSection />
       <ContactTeaserSection />
