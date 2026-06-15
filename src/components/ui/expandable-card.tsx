@@ -95,6 +95,7 @@ export function ExpandableCard({
               role="dialog"
               aria-modal="true"
               aria-label={title}
+              data-lenis-prevent
               className={cn(
                 'relative flex h-full w-full max-w-[850px] flex-col overflow-auto bg-diamanti-shell shadow-lift [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] [scrollbar-width:none] sm:rounded-t-3xl',
                 classNameExpanded,
