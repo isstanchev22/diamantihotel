@@ -21,7 +21,7 @@ export function TrustStripSection() {
           {trustBadges.map((badge) => (
             <span
               key={badge.bg}
-              className="rounded-full border border-diamanti-sea/35 bg-white/80 px-4 py-2 text-xs uppercase tracking-[0.11em] text-diamanti-sea"
+              className="rounded-full border border-diamanti-sea/35 bg-diamanti-shell px-4 py-2 text-xs font-semibold uppercase tracking-[0.11em] text-diamanti-sea"
             >
               {badge[locale]}
             </span>

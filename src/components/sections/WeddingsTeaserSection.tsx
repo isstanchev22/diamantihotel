@@ -8,6 +8,7 @@ import { submitFormEnquiry } from '../../lib/formSubmission'
 import { trackEvent } from '../../lib/tracking'
 import { BookingCta } from '../ui/BookingCta'
 import { CtaButton } from '../ui/CtaButton'
+import { Icon } from '../ui/Icon'
 import { FormField } from '../ui/FormField'
 import { RevealOnScroll } from '../ui/RevealOnScroll'
 import { SectionContainer } from '../ui/SectionContainer'
@@ -106,33 +107,51 @@ export function WeddingsTeaserSection() {
                 en: 'We host small weddings for 20-40 guests, with the option for an external ceremony, restaurant coordination, and a calm seaside setting. The wedding can also be arranged without overnight stays at the hotel.',
               }}
             />
-            <ul className="mt-6 space-y-3 rounded-2xl border border-diamanti-sand/70 bg-white p-5 text-sm text-diamanti-navy/85 md:text-base">
-              <li>• {locale === 'bg' ? 'Подходящо за 20-40 гости' : 'Suitable for 20-40 guests'}</li>
-              <li>• {locale === 'bg' ? 'Възможност за изнесен ритуал' : 'External ceremony available'}</li>
-              <li>• {locale === 'bg' ? 'Може да бъде без настаняване в хотела' : 'Can be organized without hotel accommodation'}</li>
-              <li>
-                •{' '}
-                {locale === 'bg'
-                  ? 'Работим със Сватбена агенция „Диаманти“ - '
-                  : 'In partnership with Wedding Agency "Diamanti" - '}
-                <a
-                  href="https://diamanti-bs.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-diamanti-navy underline-offset-4 hover:underline"
-                >
-                  diamanti-bs.com
-                </a>
+            <ul className="mt-6 space-y-3 rounded-2xl border border-diamanti-mist/45 bg-diamanti-shell p-6 text-sm text-diamanti-ink/85 md:text-base">
+              <li className="flex gap-2.5">
+                <Icon name="users" size={18} className="mt-0.5 shrink-0 text-diamanti-brass" />
+                <span>{locale === 'bg' ? 'Подходящо за 20-40 гости' : 'Suitable for 20-40 guests'}</span>
+              </li>
+              <li className="flex gap-2.5">
+                <Icon name="rings" size={18} className="mt-0.5 shrink-0 text-diamanti-brass" />
+                <span>{locale === 'bg' ? 'Възможност за изнесен ритуал' : 'External ceremony available'}</span>
+              </li>
+              <li className="flex gap-2.5">
+                <Icon name="check" size={18} className="mt-0.5 shrink-0 text-diamanti-brass" />
+                <span>
+                  {locale === 'bg'
+                    ? 'Може да бъде без настаняване в хотела'
+                    : 'Can be organized without hotel accommodation'}
+                </span>
+              </li>
+              <li className="flex gap-2.5">
+                <Icon name="globe" size={18} className="mt-0.5 shrink-0 text-diamanti-brass" />
+                <span>
+                  {locale === 'bg'
+                    ? 'Работим със Сватбена агенция „Диаманти“ - '
+                    : 'In partnership with Wedding Agency "Diamanti" - '}
+                  <a
+                    href="https://diamanti-bs.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-diamanti-sea underline-offset-4 hover:underline"
+                  >
+                    diamanti-bs.com
+                  </a>
+                </span>
               </li>
             </ul>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
                 href="#wedding-enquiry"
-                className="inline-flex items-center justify-center rounded-full bg-diamanti-terracotta px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-diamanti-terracotta/90 md:text-base"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-diamanti-brass px-6 py-3 text-sm font-semibold text-diamanti-ink transition duration-300 hover:-translate-y-0.5 hover:bg-diamanti-brassDeep hover:shadow-brass md:text-base"
               >
                 {ctas.askWedding[locale]}
+                <Icon name="arrow-right" size={17} />
               </a>
-              <BookingCta placement="weddings_section">{ctas.book[locale]}</BookingCta>
+              <BookingCta placement="weddings_section" variant="secondary">
+                {ctas.book[locale]}
+              </BookingCta>
             </div>
           </div>
         </RevealOnScroll>
@@ -142,16 +161,20 @@ export function WeddingsTeaserSection() {
             image={sectionImages.weddingTerrace}
             className="min-h-[360px]"
             imgClassName="aspect-[4/3]"
+            graded
           />
         </RevealOnScroll>
       </div>
 
       <RevealOnScroll delayMs={150}>
-        <div id="wedding-enquiry" className="mt-10 rounded-3xl border border-diamanti-sand/70 bg-white p-6 md:p-7">
-          <h3 className="font-display text-3xl text-diamanti-navy md:text-4xl">
+        <div
+          id="wedding-enquiry"
+          className="mt-10 scroll-mt-28 rounded-3xl border border-diamanti-mist/45 bg-diamanti-shell p-6 shadow-soft md:p-8"
+        >
+          <h3 className="font-display text-3xl text-diamanti-ink md:text-4xl">
             {ctas.askWedding[locale]}
           </h3>
-          <p className="mt-2 text-sm text-diamanti-navy/75 md:text-base">
+          <p className="mt-2 text-sm text-diamanti-ink/70 md:text-base">
             {locale === 'bg'
               ? 'Изпратете дата, брой гости и кратка идея за деня. Ще ви върнем ясна рамка за възможностите.'
               : 'Send your date, guest count, and a short idea for the day. We’ll reply with a clear outline of what’s possible.'}
@@ -222,13 +245,16 @@ export function WeddingsTeaserSection() {
                   : ctas.askWedding[locale]}
               </CtaButton>
               {success ? (
-                <p className="mt-3 text-sm text-green-700">
+                <p className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-diamanti-sea">
+                  <Icon name="check" size={17} className="text-diamanti-brass" />
                   {locale === 'bg'
                     ? 'Благодарим. Получихме запитването и ще се свържем скоро.'
                     : 'Thank you. We received your enquiry and will get back to you soon.'}
                 </p>
               ) : null}
-              {submitError ? <p className="mt-2 text-sm text-red-700">{submitError}</p> : null}
+              {submitError ? (
+                <p className="mt-2 text-sm font-medium text-diamanti-coral">{submitError}</p>
+              ) : null}
             </div>
           </form>
         </div>

@@ -16,20 +16,20 @@ export function TextAreaField({
 }: TextAreaFieldProps) {
   return (
     <div className="space-y-2">
-      <label htmlFor={id} className="text-sm font-medium text-diamanti-navy">
+      <label htmlFor={id} className="text-sm font-medium text-diamanti-ink">
         {label}
       </label>
       <textarea
         id={id}
         className={classNames(
-          'min-h-32 w-full rounded-2xl border bg-white px-4 py-3 text-sm text-diamanti-navy outline-none transition placeholder:text-diamanti-navy/45 focus:border-diamanti-sea md:text-base',
-          error ? 'border-red-500' : 'border-diamanti-sand',
+          'min-h-32 w-full rounded-xl border bg-diamanti-shell px-4 py-3 text-sm text-diamanti-ink outline-none transition placeholder:text-diamanti-ink/45 focus:border-diamanti-sea focus:ring-2 focus:ring-diamanti-sea/25 md:text-base',
+          error ? 'border-diamanti-coral' : 'border-diamanti-mist/60',
           className,
         )}
         {...props}
       />
       {error ? (
-        <p className="text-xs text-red-600" role="alert">
+        <p className="text-xs text-diamanti-coral" role="alert">
           {error}
         </p>
       ) : null}

@@ -2,6 +2,7 @@
 import { guideCards } from '../../data/guideData'
 import { oldTownHighlights } from '../../data/siteData'
 import { sectionImages } from '../../data/imageData'
+import { Icon } from '../ui/Icon'
 import { RevealOnScroll } from '../ui/RevealOnScroll'
 import { SectionContainer } from '../ui/SectionContainer'
 import { SectionHeading } from '../ui/SectionHeading'
@@ -31,9 +32,14 @@ export function OldTownSection() {
           <div>
             <ul className="space-y-3">
               {oldTownHighlights.map((highlight) => (
-                <li key={highlight.bg} className="flex gap-3 rounded-2xl bg-white/85 p-4">
-                  <span className="mt-1 block h-2 w-2 rounded-full bg-diamanti-terracotta" />
-                  <span className="text-sm text-diamanti-navy/85 md:text-base">
+                <li
+                  key={highlight.bg}
+                  className="flex items-center gap-3 rounded-2xl border border-diamanti-mist/40 bg-diamanti-shell p-4"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-diamanti-sea/10 text-diamanti-sea">
+                    <Icon name="map-pin" size={18} />
+                  </span>
+                  <span className="text-sm text-diamanti-ink/85 md:text-base">
                     {highlight[locale]}
                   </span>
                 </li>
@@ -41,14 +47,18 @@ export function OldTownSection() {
             </ul>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {guideCards.map((card) => (
-                <article key={card.title.bg} className="rounded-2xl border border-diamanti-sand/70 bg-white p-4">
-                  <p className="text-xs uppercase tracking-[0.13em] text-diamanti-sea">
+                <article
+                  key={card.title.bg}
+                  className="premium-card-hover rounded-2xl border border-diamanti-mist/45 bg-diamanti-shell p-5"
+                >
+                  <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.13em] text-diamanti-coralDeep">
+                    <Icon name="compass" size={14} />
                     {card.walkingTime[locale]}
                   </p>
-                  <h3 className="mt-2 font-display text-2xl leading-tight text-diamanti-navy">
+                  <h3 className="mt-3 font-display text-2xl leading-tight text-diamanti-ink">
                     {card.title[locale]}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-diamanti-navy/80">
+                  <p className="mt-2 text-sm leading-relaxed text-diamanti-ink/75">
                     {card.description[locale]}
                   </p>
                 </article>
@@ -59,8 +69,12 @@ export function OldTownSection() {
 
         <RevealOnScroll delayMs={120}>
           <div className="grid gap-4">
-            <SmartImage image={sectionImages.oldTownStreet} imgClassName="aspect-[4/3]" />
-            <SmartImage image={sectionImages.oldTownWaterfront} imgClassName="aspect-[4/3]" />
+            <SmartImage image={sectionImages.oldTownStreet} imgClassName="aspect-[4/3]" graded />
+            <SmartImage
+              image={sectionImages.oldTownWaterfront}
+              imgClassName="aspect-[4/3]"
+              graded
+            />
           </div>
         </RevealOnScroll>
       </div>

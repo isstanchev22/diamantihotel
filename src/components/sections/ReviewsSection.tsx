@@ -23,14 +23,18 @@ export function ReviewsSection() {
       </RevealOnScroll>
 
       <RevealOnScroll delayMs={70}>
-        <figure className="premium-card-hover premium-shimmer mx-auto mt-8 max-w-4xl rounded-2xl border border-diamanti-sand/70 bg-white px-6 py-8 text-center shadow-soft md:px-10 md:py-10">
-          <div className="premium-float mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-diamanti-navy font-display text-4xl leading-none text-diamanti-ivory">
-            "
+        <figure className="premium-card-hover mx-auto mt-8 max-w-4xl rounded-3xl border border-diamanti-mist/45 bg-diamanti-shell px-6 py-10 text-center shadow-soft md:px-12 md:py-12">
+          <div
+            aria-hidden="true"
+            className="premium-float mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-diamanti-sea font-display text-4xl leading-none text-diamanti-limestone"
+          >
+            “
           </div>
-          <blockquote className="font-display text-4xl leading-tight text-diamanti-navy md:text-6xl">
+          <blockquote className="font-display text-4xl leading-[1.05] text-diamanti-ink md:text-6xl">
             {locale === 'bg' ? 'Тук живее щастието.' : 'Happiness lives here.'}
           </blockquote>
-          <figcaption className="mt-4 text-sm font-medium uppercase tracking-[0.16em] text-diamanti-sea">
+          <span aria-hidden="true" className="horizon-rule is-centered mt-5" />
+          <figcaption className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-diamanti-coralDeep">
             {locale === 'bg' ? 'Любен Дилов - син' : 'Lyuben Dilov Jr.'}
           </figcaption>
         </figure>

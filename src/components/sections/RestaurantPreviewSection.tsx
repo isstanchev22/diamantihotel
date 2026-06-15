@@ -11,6 +11,7 @@ import { submitFormEnquiry } from '../../lib/formSubmission'
 import { trackEvent } from '../../lib/tracking'
 import { BookingCta } from '../ui/BookingCta'
 import { CtaButton } from '../ui/CtaButton'
+import { Icon } from '../ui/Icon'
 import { FormField } from '../ui/FormField'
 import { RevealOnScroll } from '../ui/RevealOnScroll'
 import { SectionContainer } from '../ui/SectionContainer'
@@ -111,16 +112,29 @@ export function RestaurantPreviewSection() {
                 en: 'The restaurant extends the stay: morning coffee and breakfast, then calm evening atmosphere above the sea.',
               }}
             />
-            <ul className="mt-6 space-y-3 rounded-2xl border border-diamanti-sand/70 bg-white p-5 text-sm text-diamanti-navy/85 md:text-base">
-              <li>• {locale === 'bg' ? 'Тераса с директна морска панорама' : 'Terrace with direct sea panorama'}</li>
-              <li>• {locale === 'bg' ? 'Подходящо за гости и външни посетители' : 'Suitable for hotel guests and outside visitors'}</li>
-              <li>• {locale === 'bg' ? 'Възможност за комбиниране с настаняване' : 'Can be combined with accommodation stay'}</li>
+            <ul className="mt-6 space-y-3 rounded-2xl border border-diamanti-mist/45 bg-diamanti-shell p-6 text-sm text-diamanti-ink/85 md:text-base">
+              {[
+                locale === 'bg'
+                  ? 'Тераса с директна морска панорама'
+                  : 'Terrace with direct sea panorama',
+                locale === 'bg'
+                  ? 'Подходящо за гости и външни посетители'
+                  : 'Suitable for hotel guests and outside visitors',
+                locale === 'bg'
+                  ? 'Възможност за комбиниране с настаняване'
+                  : 'Can be combined with accommodation stay',
+              ].map((point) => (
+                <li key={point} className="flex gap-2.5">
+                  <Icon name="check" size={18} className="mt-0.5 shrink-0 text-diamanti-brass" />
+                  <span>{point}</span>
+                </li>
+              ))}
             </ul>
             <div className="mt-7 flex flex-wrap gap-3">
               <BookingCta placement="restaurant_section_primary">{ctas.book[locale]}</BookingCta>
               <a
                 href="#weddings-events"
-                className="inline-flex items-center justify-center rounded-full border border-diamanti-navy px-5 py-3 text-sm font-medium text-diamanti-navy transition duration-300 hover:-translate-y-0.5 hover:bg-diamanti-sand/40 md:text-base"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-diamanti-sea/70 px-6 py-3 text-sm font-semibold text-diamanti-sea transition duration-300 hover:-translate-y-0.5 hover:bg-diamanti-sea hover:text-diamanti-limestone md:text-base"
               >
                 {ctas.askWedding[locale]}
               </a>
@@ -133,16 +147,17 @@ export function RestaurantPreviewSection() {
             image={sectionImages.restaurantTerrace}
             className="min-h-[360px]"
             imgClassName="aspect-[4/3]"
+            graded
           />
         </RevealOnScroll>
       </div>
 
       <RevealOnScroll delayMs={160}>
-        <div className="mt-10 rounded-3xl border border-diamanti-sand/70 bg-white p-6 md:p-7">
-          <h3 className="font-display text-3xl text-diamanti-navy md:text-4xl">
+        <div className="mt-10 rounded-3xl border border-diamanti-mist/45 bg-diamanti-shell p-6 shadow-soft md:p-8">
+          <h3 className="font-display text-3xl text-diamanti-ink md:text-4xl">
             {locale === 'bg' ? 'Резервирай маса' : 'Reserve a table'}
           </h3>
-          <p className="mt-2 text-sm text-diamanti-navy/75 md:text-base">
+          <p className="mt-2 text-sm text-diamanti-ink/70 md:text-base">
             {locale === 'bg'
               ? 'Изпратете предпочитани дата и час. Ще потвърдим обратно с налични места.'
               : 'Send your preferred date and time. We will confirm availability.'}
@@ -220,13 +235,16 @@ export function RestaurantPreviewSection() {
                   : ctas.reserveTable[locale]}
               </CtaButton>
               {success ? (
-                <p className="mt-3 text-sm text-green-700">
+                <p className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-diamanti-sea">
+                  <Icon name="check" size={17} className="text-diamanti-brass" />
                   {locale === 'bg'
                     ? 'Благодарим. Запитването е изпратено успешно.'
                     : 'Thank you. Your request was submitted successfully.'}
                 </p>
               ) : null}
-              {submitError ? <p className="mt-2 text-sm text-red-700">{submitError}</p> : null}
+              {submitError ? (
+                <p className="mt-2 text-sm font-medium text-diamanti-coral">{submitError}</p>
+              ) : null}
             </div>
           </form>
         </div>

@@ -7,6 +7,7 @@ import { classNames } from '../../lib/classNames'
 import { useActiveSection } from '../../lib/useActiveSection'
 import { scrollToSection } from '../../lib/scrollToSection'
 import { BookingCta } from '../ui/BookingCta'
+import { Icon } from '../ui/Icon'
 import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 
 export function SiteHeader() {
@@ -44,8 +45,8 @@ export function SiteHeader() {
       className={classNames(
         'sticky top-0 z-50 backdrop-blur transition-colors duration-300',
         isDarkTheme
-          ? 'border-b border-white/20 bg-diamanti-navy/55'
-          : 'border-b border-diamanti-sand/60 bg-diamanti-ivory/95',
+          ? 'border-b border-white/15 bg-diamanti-ink/55'
+          : 'border-b border-diamanti-mist/40 bg-diamanti-limestone/95',
       )}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
@@ -75,17 +76,25 @@ export function SiteHeader() {
                 href={resolveHref(item.to)}
                 onClick={(event) => handleAnchorClick(event, item.to)}
                 className={classNames(
-                  'text-sm transition',
+                  'relative py-1 text-sm transition',
                   isDarkTheme
                     ? isActive
                       ? 'font-semibold text-white'
-                      : 'text-white/78 hover:text-white'
+                      : 'text-white/75 hover:text-white'
                     : isActive
-                      ? 'font-semibold text-diamanti-navy'
-                      : 'text-diamanti-navy/75 hover:text-diamanti-navy',
+                      ? 'font-semibold text-diamanti-ink'
+                      : 'text-diamanti-ink/70 hover:text-diamanti-ink',
                 )}
+                aria-current={isActive ? 'true' : undefined}
               >
                 {item.label[locale]}
+                <span
+                  aria-hidden="true"
+                  className={classNames(
+                    'absolute -bottom-0.5 left-0 h-0.5 rounded-full bg-diamanti-brass transition-all duration-300',
+                    isActive ? 'w-full' : 'w-0',
+                  )}
+                />
               </a>
             )
           })}
@@ -93,32 +102,23 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageSwitcher theme={headerTheme} />
-          <BookingCta
-            placement="header"
-            className={
-              isDarkTheme
-                ? 'bg-white text-diamanti-navy hover:bg-white/92 focus-visible:outline-white'
-                : undefined
-            }
-          >
-            {headerBookingLabel}
-          </BookingCta>
+          <BookingCta placement="header">{headerBookingLabel}</BookingCta>
         </div>
 
         <button
           type="button"
           className={classNames(
-            'inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors lg:hidden',
+            'inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full transition-colors lg:hidden',
             isDarkTheme
-              ? 'border border-white/45 text-white'
-              : 'border border-diamanti-sand text-diamanti-navy',
+              ? 'border border-white/40 text-white hover:bg-white/10'
+              : 'border border-diamanti-mist/70 text-diamanti-ink hover:bg-diamanti-mist/25',
           )}
           onClick={() => setIsOpen((open) => !open)}
           aria-expanded={isOpen}
           aria-controls="mobile-nav"
           aria-label={locale === 'bg' ? 'Отвори меню' : 'Open menu'}
         >
-          <span className="text-lg">{isOpen ? '×' : '☰'}</span>
+          <Icon name={isOpen ? 'close' : 'menu'} size={22} />
         </button>
       </div>
 
@@ -127,21 +127,21 @@ export function SiteHeader() {
         className={classNames(
           'overflow-hidden px-5 transition-all duration-300 lg:hidden',
           isDarkTheme
-            ? 'border-t border-white/20 bg-diamanti-navy/92'
-            : 'border-t border-diamanti-sand/60 bg-diamanti-ivory',
+            ? 'border-t border-white/15 bg-diamanti-ink/95'
+            : 'border-t border-diamanti-mist/40 bg-diamanti-limestone',
           isOpen ? 'max-h-[80vh] py-4' : 'max-h-0 py-0',
         )}
       >
-        <nav className="flex flex-col gap-3" aria-label="Mobile">
+        <nav className="flex flex-col gap-2" aria-label="Mobile">
           {navigationLinks.map((item) => (
             <a
               key={item.to}
               href={resolveHref(item.to)}
               className={classNames(
-                'rounded-xl px-3 py-2 transition-colors',
+                'rounded-xl px-3 py-2.5 transition-colors',
                 isDarkTheme
-                  ? 'text-white hover:bg-white/12'
-                  : 'text-diamanti-navy hover:bg-diamanti-sand/40',
+                  ? 'text-white hover:bg-white/10'
+                  : 'text-diamanti-ink hover:bg-diamanti-mist/25',
               )}
               onClick={(event) => handleAnchorClick(event, item.to)}
             >
@@ -151,15 +151,7 @@ export function SiteHeader() {
         </nav>
         <div className="mt-5 space-y-3 pb-2">
           <LanguageSwitcher theme={headerTheme} />
-          <BookingCta
-            placement="mobile_menu"
-            fullWidth
-            className={
-              isDarkTheme
-                ? 'bg-white text-diamanti-navy hover:bg-white/92 focus-visible:outline-white'
-                : undefined
-            }
-          >
+          <BookingCta placement="mobile_menu" fullWidth>
             {headerBookingLabel}
           </BookingCta>
         </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useLanguage } from '../../context/LanguageContext'
 import { roomImageMap, sectionImages } from '../../data/imageData'
 import { classNames } from '../../lib/classNames'
+import { Icon } from '../ui/Icon'
 import { RevealOnScroll } from '../ui/RevealOnScroll'
 import { SectionContainer } from '../ui/SectionContainer'
 import { SectionHeading } from '../ui/SectionHeading'
@@ -57,7 +58,7 @@ export function GallerySection() {
       </RevealOnScroll>
 
       <RevealOnScroll delayMs={100}>
-        <div className="premium-scale-in mt-8 overflow-hidden rounded-3xl border border-diamanti-sand/70 bg-diamanti-navy shadow-soft">
+        <div className="premium-scale-in mt-8 overflow-hidden rounded-3xl border border-diamanti-sea/30 bg-diamanti-ink shadow-soft">
           <div className="relative min-h-[390px] overflow-hidden md:min-h-[620px]">
             <img
               key={activeItem.src}
@@ -67,14 +68,16 @@ export function GallerySection() {
               loading={activeIndex === 0 ? 'eager' : 'lazy'}
             />
             <div
-              className="absolute inset-0 bg-gradient-to-t from-diamanti-navy/75 via-diamanti-navy/12 to-transparent"
+              className="absolute inset-0 bg-gradient-to-t from-diamanti-ink/80 via-diamanti-ink/12 to-transparent"
               aria-hidden="true"
             />
 
             <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 md:p-7">
-              <div className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-white backdrop-blur">
-                {String(activeIndex + 1).padStart(2, '0')} /{' '}
-                {String(galleryItems.length).padStart(2, '0')}
+              <div className="rounded-full border border-white/25 bg-diamanti-ink/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-diamanti-limestone backdrop-blur">
+                <span className="text-diamanti-brass">
+                  {String(activeIndex + 1).padStart(2, '0')}
+                </span>{' '}
+                / {String(galleryItems.length).padStart(2, '0')}
               </div>
 
               <div className="flex gap-2">
@@ -82,23 +85,23 @@ export function GallerySection() {
                   type="button"
                   onClick={showPrevious}
                   aria-label={locale === 'bg' ? 'Предишна снимка' : 'Previous image'}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/55 bg-white/10 text-2xl leading-none text-white backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-diamanti-navy"
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-diamanti-ink/40 text-diamanti-limestone backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-diamanti-brass hover:text-diamanti-ink"
                 >
-                  ‹
+                  <Icon name="chevron-left" size={22} />
                 </button>
                 <button
                   type="button"
                   onClick={showNext}
                   aria-label={locale === 'bg' ? 'Следваща снимка' : 'Next image'}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/55 bg-white/10 text-2xl leading-none text-white backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-diamanti-navy"
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-diamanti-ink/40 text-diamanti-limestone backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-diamanti-brass hover:text-diamanti-ink"
                 >
-                  ›
+                  <Icon name="chevron-right" size={22} />
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-1.5 bg-diamanti-navy px-4 py-4 md:px-7">
+          <div className="flex items-center gap-1.5 bg-diamanti-ink px-4 py-4 md:px-7">
             {galleryItems.map((item, index) => (
               <button
                 key={`${item.src}-dot`}
@@ -110,8 +113,8 @@ export function GallerySection() {
                     : `Show image ${index + 1}`
                 }
                 className={classNames(
-                  'h-1.5 rounded-full transition-all duration-500',
-                  index === activeIndex ? 'w-12 bg-diamanti-sand' : 'w-4 bg-white/35',
+                  'h-1.5 cursor-pointer rounded-full transition-all duration-500',
+                  index === activeIndex ? 'w-12 bg-diamanti-brass' : 'w-4 bg-white/30',
                 )}
               />
             ))}

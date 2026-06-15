@@ -12,7 +12,7 @@ function App() {
     <LanguageProvider>
       <BrowserRouter>
         <ScrollManager />
-        <div className="min-h-screen bg-diamanti-ivory text-diamanti-navy">
+        <div className="min-h-screen bg-diamanti-limestone text-diamanti-ink">
           <SiteHeader />
           <main className="pb-24 md:pb-0">
             <Routes>

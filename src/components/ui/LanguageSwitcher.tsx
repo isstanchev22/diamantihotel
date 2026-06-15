@@ -14,8 +14,8 @@ export function LanguageSwitcher({ theme = 'light' }: LanguageSwitcherProps) {
       className={classNames(
         'inline-flex items-center rounded-full p-1 transition-colors duration-300',
         isDark
-          ? 'border border-white/35 bg-diamanti-navy/35 backdrop-blur'
-          : 'border border-diamanti-sand bg-white/90',
+          ? 'border border-white/30 bg-diamanti-ink/35 backdrop-blur'
+          : 'border border-diamanti-mist/60 bg-diamanti-shell',
       )}
       role="group"
       aria-label="Language switcher"
@@ -26,14 +26,14 @@ export function LanguageSwitcher({ theme = 'light' }: LanguageSwitcherProps) {
           type="button"
           onClick={() => setLocale(item)}
           className={classNames(
-            'rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.14em] transition',
+            'cursor-pointer rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] transition',
             isDark
               ? locale === item
-                ? 'bg-white text-diamanti-navy'
+                ? 'bg-diamanti-limestone text-diamanti-ink'
                 : 'text-white hover:bg-white/20'
               : locale === item
-                ? 'bg-diamanti-navy text-diamanti-ivory'
-                : 'text-diamanti-navy hover:bg-diamanti-sand/45',
+                ? 'bg-diamanti-sea text-diamanti-limestone'
+                : 'text-diamanti-ink hover:bg-diamanti-mist/30',
           )}
           aria-pressed={locale === item}
         >

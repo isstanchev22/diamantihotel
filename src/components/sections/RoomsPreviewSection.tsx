@@ -45,7 +45,7 @@ export function RoomsPreviewSection() {
 
       <RevealOnScroll delayMs={90}>
         <div
-          className="premium-scale-in mt-8 inline-flex flex-wrap gap-2 rounded-full border border-diamanti-sand bg-white/85 p-1 shadow-soft"
+          className="premium-scale-in mt-8 inline-flex flex-wrap gap-1.5 rounded-full border border-diamanti-mist/50 bg-diamanti-shell p-1.5 shadow-soft"
           role="tablist"
           aria-label={locale === 'bg' ? 'Категории стаи' : 'Room categories'}
         >
@@ -56,10 +56,10 @@ export function RoomsPreviewSection() {
               role="tab"
               aria-selected={activeCategory === tab.id}
               onClick={() => setActiveCategory(tab.id)}
-              className={`rounded-full px-5 py-2 text-sm font-medium transition duration-300 ${
+              className={`cursor-pointer rounded-full px-5 py-2 text-sm font-semibold transition duration-300 ${
                 activeCategory === tab.id
-                  ? 'bg-diamanti-navy text-diamanti-ivory shadow-soft'
-                  : 'text-diamanti-navy hover:-translate-y-0.5 hover:bg-diamanti-sand/35'
+                  ? 'bg-diamanti-sea text-diamanti-limestone shadow-soft'
+                  : 'text-diamanti-ink/75 hover:bg-diamanti-mist/25 hover:text-diamanti-ink'
               }`}
             >
               {tab.label[locale]}
@@ -81,7 +81,7 @@ export function RoomsPreviewSection() {
           <BookingCta placement="rooms_section_primary">{ctas.book[locale]}</BookingCta>
           <a
             href="#faq"
-            className="inline-flex items-center justify-center rounded-full border border-diamanti-navy px-5 py-3 text-sm font-medium text-diamanti-navy transition duration-300 hover:-translate-y-1 hover:bg-diamanti-sand/40 hover:shadow-soft md:text-base"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-diamanti-sea/70 px-6 py-3 text-sm font-semibold text-diamanti-sea transition duration-300 hover:-translate-y-0.5 hover:bg-diamanti-sea hover:text-diamanti-limestone md:text-base"
           >
             {locale === 'bg' ? 'Въпроси преди резервация' : 'Questions before booking'}
           </a>

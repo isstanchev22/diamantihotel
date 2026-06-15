@@ -13,10 +13,10 @@ interface CtaLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    'bg-diamanti-navy text-diamanti-ivory hover:bg-diamanti-navy/90 focus-visible:outline-diamanti-navy',
+    'bg-diamanti-brass text-diamanti-ink hover:bg-diamanti-brassDeep hover:shadow-brass focus-visible:outline-diamanti-brass',
   secondary:
-    'border border-diamanti-navy bg-transparent text-diamanti-navy hover:bg-diamanti-sand/45 focus-visible:outline-diamanti-sea',
-  text: 'text-diamanti-navy underline-offset-4 hover:underline focus-visible:outline-diamanti-sea',
+    'border border-diamanti-sea/70 bg-transparent text-diamanti-sea hover:bg-diamanti-sea hover:text-diamanti-limestone focus-visible:outline-diamanti-sea',
+  text: 'text-diamanti-sea underline-offset-4 hover:underline focus-visible:outline-diamanti-sea',
 }
 
 const sizeClasses: Record<Size, string> = {
@@ -36,7 +36,7 @@ export function CtaLink({
   return (
     <a
       className={classNames(
-        'inline-flex items-center justify-center rounded-full font-medium tracking-wide transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+        'inline-flex cursor-pointer items-center justify-center gap-2 rounded-full font-semibold tracking-wide transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
         variantClasses[variant],
         sizeClasses[size],
         fullWidth && 'w-full',

@@ -1,9 +1,13 @@
 ﻿import { useLanguage } from '../../context/LanguageContext'
 import { whyChoosePoints, ctas } from '../../data/siteData'
 import { BookingCta } from '../ui/BookingCta'
+import { Icon } from '../ui/Icon'
+import type { IconName } from '../ui/Icon'
 import { RevealOnScroll } from '../ui/RevealOnScroll'
 import { SectionContainer } from '../ui/SectionContainer'
 import { SectionHeading } from '../ui/SectionHeading'
+
+const pointIcons: IconName[] = ['wave', 'sun', 'compass', 'map-pin']
 
 export function WhyChooseSection() {
   const { locale } = useLanguage()
@@ -23,11 +27,14 @@ export function WhyChooseSection() {
         />
       </RevealOnScroll>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
         {whyChoosePoints.map((point, index) => (
           <RevealOnScroll key={point.bg} delayMs={index * 70}>
-            <article className="rounded-2xl border border-diamanti-sand/70 bg-white/85 p-5">
-              <p className="text-sm leading-relaxed text-diamanti-navy/85 md:text-base">
+            <article className="premium-card-hover flex h-full gap-4 rounded-2xl border border-diamanti-mist/45 bg-diamanti-shell p-6">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-diamanti-sea/10 text-diamanti-sea">
+                <Icon name={pointIcons[index % pointIcons.length]} size={22} />
+              </span>
+              <p className="self-center text-sm leading-relaxed text-diamanti-ink/85 md:text-base">
                 {point[locale]}
               </p>
             </article>

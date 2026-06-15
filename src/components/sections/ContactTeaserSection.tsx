@@ -7,6 +7,7 @@ import { submitFormEnquiry } from '../../lib/formSubmission'
 import { trackEvent } from '../../lib/tracking'
 import { BookingCta } from '../ui/BookingCta'
 import { CtaButton } from '../ui/CtaButton'
+import { Icon } from '../ui/Icon'
 import { FormField } from '../ui/FormField'
 import { RevealOnScroll } from '../ui/RevealOnScroll'
 import { SectionContainer } from '../ui/SectionContainer'
@@ -103,31 +104,42 @@ export function ContactTeaserSection() {
                 en: 'Get the fastest response for availability, parking guidance, and late check-in.',
               }}
             />
-            <ul className="mt-6 space-y-3 text-sm text-diamanti-navy/85 md:text-base">
-              <li>
-                <span className="font-medium text-diamanti-navy">{locale === 'bg' ? 'Адрес:' : 'Address:'}</span>{' '}
-                {contactDetails.address[locale]}
+            <ul className="mt-6 space-y-4 text-sm text-diamanti-ink/85 md:text-base">
+              <li className="flex gap-3">
+                <Icon name="map-pin" size={19} className="mt-0.5 shrink-0 text-diamanti-sea" />
+                <span>
+                  <span className="font-semibold text-diamanti-ink">
+                    {locale === 'bg' ? 'Адрес: ' : 'Address: '}
+                  </span>
+                  {contactDetails.address[locale]}
+                </span>
               </li>
-              <li>
-                <span className="font-medium text-diamanti-navy">{locale === 'bg' ? 'Рецепция:' : 'Reception:'}</span>{' '}
-                <a href={contactDetails.phoneHref} className="underline-offset-4 hover:underline">
-                  {contactDetails.phoneDisplay}
-                </a>
+              <li className="flex gap-3">
+                <Icon name="phone" size={19} className="mt-0.5 shrink-0 text-diamanti-sea" />
+                <span>
+                  <span className="font-semibold text-diamanti-ink">
+                    {locale === 'bg' ? 'Рецепция: ' : 'Reception: '}
+                  </span>
+                  <a href={contactDetails.phoneHref} className="underline-offset-4 hover:underline">
+                    {contactDetails.phoneDisplay}
+                  </a>
+                  {' · '}
+                  <a href={contactDetails.mobileHref} className="underline-offset-4 hover:underline">
+                    {contactDetails.mobileDisplay}
+                  </a>
+                </span>
               </li>
-              <li>
-                <span className="font-medium text-diamanti-navy">{locale === 'bg' ? 'Мобилен:' : 'Mobile:'}</span>{' '}
-                <a href={contactDetails.mobileHref} className="underline-offset-4 hover:underline">
-                  {contactDetails.mobileDisplay}
-                </a>
-              </li>
-              <li>
-                <span className="font-medium text-diamanti-navy">Email:</span>{' '}
-                <a
-                  href={`mailto:${contactDetails.email}`}
-                  className="underline-offset-4 hover:underline"
-                >
-                  {contactDetails.email}
-                </a>
+              <li className="flex gap-3">
+                <Icon name="mail" size={19} className="mt-0.5 shrink-0 text-diamanti-sea" />
+                <span>
+                  <span className="font-semibold text-diamanti-ink">Email: </span>
+                  <a
+                    href={`mailto:${contactDetails.email}`}
+                    className="underline-offset-4 hover:underline"
+                  >
+                    {contactDetails.email}
+                  </a>
+                </span>
               </li>
             </ul>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -135,40 +147,42 @@ export function ContactTeaserSection() {
                 href={contactDetails.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-diamanti-navy px-4 py-2 text-sm font-medium text-diamanti-navy hover:bg-diamanti-sand/35"
+                className="inline-flex items-center gap-2 rounded-full border border-diamanti-sea/70 px-5 py-2.5 text-sm font-semibold text-diamanti-sea transition hover:bg-diamanti-sea hover:text-diamanti-limestone"
               >
+                <Icon name="whatsapp" size={17} />
                 WhatsApp
               </a>
               <a
                 href={contactDetails.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-diamanti-navy px-4 py-2 text-sm font-medium text-diamanti-navy hover:bg-diamanti-sand/35"
+                className="inline-flex items-center gap-2 rounded-full border border-diamanti-sea/70 px-5 py-2.5 text-sm font-semibold text-diamanti-sea transition hover:bg-diamanti-sea hover:text-diamanti-limestone"
               >
-                {locale === 'bg' ? 'Google Maps' : 'Google Maps'}
+                <Icon name="map-pin" size={17} />
+                Google Maps
               </a>
             </div>
           </div>
         </RevealOnScroll>
 
         <RevealOnScroll delayMs={120}>
-          <div className="overflow-hidden rounded-3xl border border-diamanti-sand/70 bg-white shadow-soft">
+          <div className="overflow-hidden rounded-3xl border border-diamanti-mist/45 bg-diamanti-shell shadow-soft">
             <iframe
               title="Hotel Diamanti location map"
               src="https://www.google.com/maps?q=Hotel%20Diamanti%20Sozopol&output=embed"
               loading="lazy"
-              className="h-[360px] w-full border-0"
+              className="h-[360px] w-full border-0 md:h-full md:min-h-[420px]"
             />
           </div>
         </RevealOnScroll>
       </div>
 
       <RevealOnScroll delayMs={150}>
-        <div className="mt-10 rounded-3xl border border-diamanti-sand/70 bg-white p-6 md:p-7">
-          <h3 className="font-display text-3xl text-diamanti-navy md:text-4xl">
+        <div className="mt-10 rounded-3xl border border-diamanti-mist/45 bg-diamanti-shell p-6 shadow-soft md:p-8">
+          <h3 className="font-display text-3xl text-diamanti-ink md:text-4xl">
             {ctas.contactUs[locale]}
           </h3>
-          <p className="mt-2 text-sm text-diamanti-navy/75 md:text-base">
+          <p className="mt-2 text-sm text-diamanti-ink/70 md:text-base">
             {locale === 'bg'
               ? 'Изпратете дати и предпочитания. Ще върнем конкретна препоръка за категория и достъп.'
               : 'Send your dates and preferences. We will reply with a concrete room and arrival recommendation.'}
@@ -250,13 +264,16 @@ export function ContactTeaserSection() {
             </div>
             <div className="md:col-span-2">
               {success ? (
-                <p className="text-sm text-green-700">
+                <p className="inline-flex items-center gap-2 text-sm font-medium text-diamanti-sea">
+                  <Icon name="check" size={17} className="text-diamanti-brass" />
                   {locale === 'bg'
                     ? 'Благодарим. Запитването е изпратено успешно.'
                     : 'Thank you. Your enquiry was submitted successfully.'}
                 </p>
               ) : null}
-              {submitError ? <p className="mt-2 text-sm text-red-700">{submitError}</p> : null}
+              {submitError ? (
+                <p className="mt-2 text-sm font-medium text-diamanti-coral">{submitError}</p>
+              ) : null}
             </div>
           </form>
         </div>

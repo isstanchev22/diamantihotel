@@ -30,10 +30,10 @@ export function BookingCta({
         })
       }
       className={classNames(
-        'premium-shimmer inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium tracking-wide transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 md:text-base',
+        'inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 md:text-base',
         variant === 'primary'
-          ? 'bg-diamanti-navy text-diamanti-ivory hover:-translate-y-1 hover:bg-diamanti-navy/90 hover:shadow-soft focus-visible:outline-diamanti-navy'
-          : 'border border-diamanti-navy bg-transparent text-diamanti-navy hover:-translate-y-1 hover:bg-diamanti-sand/45 hover:shadow-soft focus-visible:outline-diamanti-sea',
+          ? 'bg-diamanti-brass text-diamanti-ink hover:-translate-y-0.5 hover:bg-diamanti-brassDeep hover:shadow-brass focus-visible:outline-diamanti-brass'
+          : 'border border-diamanti-sea/70 bg-transparent text-diamanti-sea hover:-translate-y-0.5 hover:bg-diamanti-sea hover:text-diamanti-limestone hover:shadow-soft focus-visible:outline-diamanti-sea',
         fullWidth && 'w-full',
         className,
       )}

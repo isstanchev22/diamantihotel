@@ -16,8 +16,8 @@ export function LegalPage({ title, description, body }: LegalPageProps) {
     <>
       <PageSeo title={title} description={description} />
       <SectionContainer>
-        <h1 className="font-display text-5xl text-diamanti-navy">{title[locale]}</h1>
-        <div className="mt-6 space-y-4 text-sm leading-relaxed text-diamanti-navy/82 md:text-base">
+        <h1 className="font-display text-5xl text-diamanti-ink">{title[locale]}</h1>
+        <div className="mt-6 max-w-[68ch] space-y-4 text-sm leading-relaxed text-diamanti-ink/80 md:text-base">
           {body.map((paragraph) => (
             <p key={paragraph.bg}>{paragraph[locale]}</p>
           ))}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FaqItem } from '../../types/content'
 import { useLanguage } from '../../context/LanguageContext'
 import { classNames } from '../../lib/classNames'
+import { Icon } from './Icon'
 
 interface FaqAccordionProps {
   items: FaqItem[]
@@ -22,8 +23,10 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
           <article
             key={item.question.bg}
             className={classNames(
-              'premium-card-hover rounded-2xl border bg-white',
-              isOpen ? 'border-diamanti-terracotta/70 shadow-soft' : 'border-diamanti-sand/70',
+              'rounded-2xl border bg-diamanti-shell transition-colors duration-300',
+              isOpen
+                ? 'border-diamanti-brass/60 shadow-soft'
+                : 'border-diamanti-mist/45 hover:border-diamanti-sea/40',
             )}
           >
             <h3>
@@ -33,19 +36,21 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-5 text-left"
               >
-                <span className="font-medium text-diamanti-navy transition duration-300">
+                <span className="font-medium text-diamanti-ink transition duration-300 md:text-lg">
                   {item.question[locale]}
                 </span>
                 <span
                   aria-hidden="true"
                   className={classNames(
-                    'inline-flex h-7 w-7 items-center justify-center rounded-full border border-diamanti-navy text-diamanti-navy transition duration-300',
-                    isOpen && 'rotate-45 bg-diamanti-navy text-diamanti-ivory',
+                    'inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition duration-300',
+                    isOpen
+                      ? 'rotate-45 border-diamanti-brass bg-diamanti-brass text-diamanti-ink'
+                      : 'border-diamanti-sea/50 text-diamanti-sea',
                   )}
                 >
-                  +
+                  <Icon name="plus" size={18} />
                 </span>
               </button>
             </h3>
@@ -59,7 +64,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
               )}
             >
               <div className="overflow-hidden">
-                <p className="premium-fade-up px-5 pb-5 text-sm leading-relaxed text-diamanti-navy/80 md:text-base">
+                <p className="premium-fade-up px-5 pb-5 text-sm leading-relaxed text-diamanti-ink/75 md:text-base">
                   {item.answer[locale]}
                 </p>
               </div>
