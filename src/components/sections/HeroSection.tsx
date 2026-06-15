@@ -51,6 +51,8 @@ export function HeroSection() {
         style={{ y: reduced ? 0 : rawImageY }}
         className="absolute inset-x-0 -top-[15%] h-[130%] w-full object-cover"
         loading="eager"
+        fetchPriority="high"
+        decoding="async"
       />
 
       {/* Legibility scrim: darker through the left where the copy sits,

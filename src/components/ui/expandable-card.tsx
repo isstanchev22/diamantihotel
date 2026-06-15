@@ -106,6 +106,7 @@ export function ExpandableCard({
                   <img
                     src={src}
                     alt={imageAlt ?? title}
+                    decoding="async"
                     className="h-80 w-full object-cover object-center"
                   />
                 </div>
@@ -188,6 +189,8 @@ export function ExpandableCard({
             <img
               src={src}
               alt={imageAlt ?? title}
+              loading="lazy"
+              decoding="async"
               className="aspect-[16/10] w-full rounded-2xl object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
             />
           </motion.div>

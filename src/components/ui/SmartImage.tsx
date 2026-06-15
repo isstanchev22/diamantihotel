@@ -61,6 +61,8 @@ export function SmartImage({
         src={image.src}
         alt={image.alt[locale]}
         loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
+        decoding="async"
         onError={() => setFailed(true)}
         style={parallax ? { y: reduced ? 0 : rawY } : undefined}
         className={classNames(
