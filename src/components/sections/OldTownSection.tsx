@@ -69,11 +69,17 @@ export function OldTownSection() {
 
         <RevealOnScroll delayMs={120}>
           <div className="grid gap-4">
-            <SmartImage image={sectionImages.oldTownStreet} imgClassName="aspect-[4/3]" graded />
+            <SmartImage
+              image={sectionImages.oldTownStreet}
+              imgClassName="aspect-[4/3]"
+              graded
+              parallax
+            />
             <SmartImage
               image={sectionImages.oldTownWaterfront}
               imgClassName="aspect-[4/3]"
               graded
+              parallax
             />
           </div>
         </RevealOnScroll>

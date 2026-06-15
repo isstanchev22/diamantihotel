@@ -162,6 +162,7 @@ export function WeddingsTeaserSection() {
             className="min-h-[360px]"
             imgClassName="aspect-[4/3]"
             graded
+            parallax
           />
         </RevealOnScroll>
       </div>

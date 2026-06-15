@@ -2,6 +2,7 @@
 import { bookingEngineUrl } from '../../data/siteData'
 import { classNames } from '../../lib/classNames'
 import { trackEvent } from '../../lib/tracking'
+import { useMagnetic } from '../../lib/useMagnetic'
 
 interface BookingCtaProps {
   children: ReactNode
@@ -18,8 +19,10 @@ export function BookingCta({
   fullWidth = false,
   placement,
 }: BookingCtaProps) {
+  const magneticRef = useMagnetic<HTMLAnchorElement>()
   return (
     <a
+      ref={magneticRef}
       href={bookingEngineUrl}
       target="_blank"
       rel="noopener noreferrer"

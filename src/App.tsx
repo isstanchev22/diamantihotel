@@ -1,7 +1,9 @@
 ﻿import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { MotionConfig } from 'framer-motion'
 import { LanguageProvider } from './context/LanguageContext'
 import { MobileBookingBar } from './components/layout/MobileBookingBar'
 import { ScrollManager } from './components/layout/ScrollManager'
+import { SmoothScroll } from './components/layout/SmoothScroll'
 import { SiteFooter } from './components/layout/SiteFooter'
 import { SiteHeader } from './components/layout/SiteHeader'
 import { HomePage } from './pages/HomePage'
@@ -10,8 +12,10 @@ import { LanguageChoiceModal } from './components/ui/LanguageChoiceModal'
 function App() {
   return (
     <LanguageProvider>
-      <BrowserRouter>
-        <ScrollManager />
+      <MotionConfig reducedMotion="user">
+        <BrowserRouter>
+          <ScrollManager />
+          <SmoothScroll />
         <div className="min-h-screen bg-diamanti-limestone text-diamanti-ink">
           <SiteHeader />
           <main className="pb-24 md:pb-0">
@@ -39,7 +43,8 @@ function App() {
           <MobileBookingBar />
           <LanguageChoiceModal />
         </div>
-      </BrowserRouter>
+        </BrowserRouter>
+      </MotionConfig>
     </LanguageProvider>
   )
 }

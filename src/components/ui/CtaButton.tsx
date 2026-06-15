@@ -1,5 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import { classNames } from '../../lib/classNames'
+import { useMagnetic } from '../../lib/useMagnetic'
 
 type Variant = 'primary' | 'secondary'
 
@@ -16,8 +17,10 @@ export function CtaButton({
   fullWidth = false,
   ...props
 }: CtaButtonProps) {
+  const magneticRef = useMagnetic<HTMLButtonElement>()
   return (
     <button
+      ref={magneticRef}
       className={classNames(
         'inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 md:text-base',
         variant === 'primary'

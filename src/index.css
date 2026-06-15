@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Sticky-header height — the hero pulls up by this so the photo runs
+       full-bleed to the top behind the translucent header. */
+    --header-h: 4.25rem;
+  }
+
   html {
     scroll-behavior: smooth;
   }

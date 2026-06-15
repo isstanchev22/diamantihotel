@@ -1,4 +1,6 @@
-﻿export function scrollToSection(hash: string) {
+import { getLenis } from './lenisStore'
+
+export function scrollToSection(hash: string) {
   const id = hash.replace('#', '')
   const target = document.getElementById(id)
   if (!target) {
@@ -6,9 +8,16 @@
   }
 
   const header = document.getElementById('site-header')
-  const offset = header ? header.offsetHeight : 0
-  const top = target.getBoundingClientRect().top + window.scrollY - offset - 8
+  const offset = (header ? header.offsetHeight : 0) + 8
 
-  window.scrollTo({ top, behavior: 'smooth' })
+  const lenis = getLenis()
+  if (lenis) {
+    // Inertia-smooth scroll through Lenis when active.
+    lenis.scrollTo(target, { offset: -offset })
+  } else {
+    const top = target.getBoundingClientRect().top + window.scrollY - offset
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+
   window.history.replaceState({}, '', `#${id}`)
 }

@@ -1,4 +1,5 @@
-﻿import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { useLanguage } from '../../context/LanguageContext'
 import { classNames } from '../../lib/classNames'
 import type { SiteImage } from '../../types/content'
@@ -10,6 +11,8 @@ interface SmartImageProps {
   priority?: boolean
   /** Adds a subtle teal duotone grade so reused stock photos feel on-brand. */
   graded?: boolean
+  /** Edge-safe scroll parallax: the (overscaled) image drifts within its frame. */
+  parallax?: boolean
 }
 
 export function SmartImage({
@@ -18,9 +21,18 @@ export function SmartImage({
   imgClassName,
   priority = false,
   graded = false,
+  parallax = false,
 }: SmartImageProps) {
   const { locale } = useLanguage()
   const [failed, setFailed] = useState(false)
+  const reduced = useReducedMotion()
+  const figureRef = useRef<HTMLElement | null>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: figureRef,
+    offset: ['start end', 'end start'],
+  })
+  const rawY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%'])
 
   if (failed) {
     return (
@@ -39,18 +51,21 @@ export function SmartImage({
 
   return (
     <figure
+      ref={figureRef}
       className={classNames(
         'group relative overflow-hidden rounded-3xl border border-diamanti-mist/50 bg-diamanti-sand shadow-soft',
         className,
       )}
     >
-      <img
+      <motion.img
         src={image.src}
         alt={image.alt[locale]}
         loading={priority ? 'eager' : 'lazy'}
         onError={() => setFailed(true)}
+        style={parallax ? { y: reduced ? 0 : rawY } : undefined}
         className={classNames(
-          'h-full w-full object-cover transition duration-700',
+          'h-full w-full object-cover',
+          parallax ? 'scale-[1.14]' : 'transition duration-700',
           imgClassName,
         )}
       />

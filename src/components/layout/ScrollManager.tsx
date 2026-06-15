@@ -1,6 +1,7 @@
 ﻿import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { scrollToSection } from '../../lib/scrollToSection'
+import { getLenis } from '../../lib/lenisStore'
 
 export function ScrollManager() {
   const location = useLocation()
@@ -12,7 +13,12 @@ export function ScrollManager() {
       return
     }
 
-    window.scrollTo(0, 0)
+    const lenis = getLenis()
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true })
+    } else {
+      window.scrollTo(0, 0)
+    }
   }, [location])
 
   return null
