@@ -66,6 +66,11 @@ export function LanguageChoiceModal() {
           <img
             src={brandLogoUrl}
             alt="Hotel Diamanti"
+            width={160}
+            height={80}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="mx-auto h-20 w-auto object-contain"
           />
         </div>
