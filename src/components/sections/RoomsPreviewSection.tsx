@@ -5,7 +5,7 @@ import { ctas } from '../../data/siteData'
 import type { RoomCategory } from '../../types/content'
 import { BookingCta } from '../ui/BookingCta'
 import { RevealOnScroll } from '../ui/RevealOnScroll'
-import { RoomCard } from '../ui/RoomCard'
+import { RoomExpandableCard } from '../ui/RoomExpandableCard'
 import { SectionContainer } from '../ui/SectionContainer'
 import { SectionHeading } from '../ui/SectionHeading'
 
@@ -71,7 +71,7 @@ export function RoomsPreviewSection() {
       <div key={activeCategory} className="premium-fade-up mt-10 grid gap-5 md:grid-cols-2">
         {visibleRooms.map((room, index) => (
           <RevealOnScroll key={room.slug} delayMs={index * 60}>
-            <RoomCard room={room} />
+            <RoomExpandableCard room={room} />
           </RevealOnScroll>
         ))}
       </div>
