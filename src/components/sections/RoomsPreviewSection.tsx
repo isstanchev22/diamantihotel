@@ -68,7 +68,10 @@ export function RoomsPreviewSection() {
         </div>
       </RevealOnScroll>
 
-      <div key={activeCategory} className="premium-fade-up mt-10 grid gap-5 md:grid-cols-2">
+      <div
+        key={`${activeCategory}-${locale}`}
+        className="premium-fade-up mt-10 grid gap-5 md:grid-cols-2"
+      >
         {visibleRooms.map((room, index) => (
           <RevealOnScroll key={room.slug} delayMs={index * 60}>
             <RoomExpandableCard room={room} />

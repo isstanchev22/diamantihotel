@@ -51,6 +51,7 @@ export function RevealText({
 
   return (
     <Tag
+      key={text}
       className={className}
       initial="hidden"
       {...(immediate
